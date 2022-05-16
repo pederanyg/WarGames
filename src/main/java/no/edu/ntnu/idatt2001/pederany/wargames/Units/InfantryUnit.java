@@ -1,4 +1,4 @@
-package no.edu.ntnu.idatt2001.pederany.wargames;
+package no.edu.ntnu.idatt2001.pederany.wargames.Units;
 
 public class InfantryUnit extends Unit {
 
@@ -31,7 +31,10 @@ public class InfantryUnit extends Unit {
      * a get method for the units attack bonus
      * @return  the units attack bonus
      */
-    public int getAttackBonus(){
+    public int getAttackBonus(String terrain) {
+        if(terrain.toLowerCase().trim().equals("forest")) {
+            return attackBonus + 2;
+        }
         return attackBonus;
     }
 
@@ -39,7 +42,10 @@ public class InfantryUnit extends Unit {
      * a get method for the units resist bonus
      * @return  the units resist bonus
      */
-    public int getResistBonus(){
+    public int getResistBonus(String terrain) {
+        if(terrain.toLowerCase().trim().equals("forest")) {
+            return resistBonus + 2;
+        }
         return resistBonus;
     }
 }

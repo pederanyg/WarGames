@@ -1,4 +1,4 @@
-package no.edu.ntnu.idatt2001.pederany.wargames;
+package no.edu.ntnu.idatt2001.pederany.wargames.Units;
 
 public abstract class Unit {
 
@@ -32,8 +32,8 @@ public abstract class Unit {
      * A method for an opponent's health value after an attack
      * @param opponent  the opponent's health value based on health, attacking capability and defensive capability
      */
-    public void attack(Unit opponent){
-        opponent.setHealth(opponent.health - (this.attack + this.getAttackBonus()) + (opponent.armor + opponent.getResistBonus()));
+    public void attack(Unit opponent, String terrain) {
+        opponent.setHealth(opponent.getHealth()-(getAttack()+getAttackBonus(terrain)) + (opponent.getArmor()+ opponent.getResistBonus(terrain)));
     }
 
     /**
@@ -88,11 +88,11 @@ public abstract class Unit {
      * an abstract method for a units attacking bonus
      * @return  a units attack bonus
      */
-    public abstract int getAttackBonus();
+    public abstract int getAttackBonus(String terrain);
 
     /**
      * an abstract method for a units resist bonus
      * @return  a units resist bonus
      */
-    public abstract int getResistBonus();
+    public abstract int getResistBonus(String terrain);
 }

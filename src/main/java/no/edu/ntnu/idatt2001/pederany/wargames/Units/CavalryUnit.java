@@ -1,8 +1,9 @@
-package no.edu.ntnu.idatt2001.pederany.wargames;
+package no.edu.ntnu.idatt2001.pederany.wargames.Units;
 
 public class CavalryUnit extends Unit {
 
-    private int attackBonus;
+    public int attackBonus;
+    public int resistBonus;
 
     /**
      * specifying the attributes of a cavalry unit in a constructor, inheriting from the superclass Unit
@@ -22,24 +23,22 @@ public class CavalryUnit extends Unit {
      */
     public CavalryUnit(String name, int health){
         this(name, health, 20, 12);
-        this.getAttackBonus();
-        this.getResistBonus();
+        this.attackBonus = 10;
+        this.resistBonus = 1;
     }
 
     /**
      * a get method that returns the unit's attack bonus as an int
      * @return  the unit's attack bonus
      */
-    public int getAttackBonus(){
-        attackBonus = 10;
-        if(attackBonus > 6){
+    public int getAttackBonus(String terrain) {
+        if(attackBonus > 6) {
+            attackBonus -= 4;
+        } else if(attackBonus > 2) {
             attackBonus -= 4;
         }
-        else if(attackBonus > 2){
-            attackBonus -= 4;
-        }
-        else if(attackBonus > 0){
-            attackBonus = 2;
+        if(terrain.toLowerCase().trim().equals("plain")) {
+            return attackBonus + 3;
         }
         return attackBonus;
     }
@@ -48,7 +47,10 @@ public class CavalryUnit extends Unit {
      * a get method that returns the unit's resist bonus as an int
      * @return  the unit's resist bonus
      */
-    public int getResistBonus(){
-        return 1;
+    public int getResistBonus(String terrain) {
+        if(terrain.toLowerCase().trim().equals("forest")) {
+            return 0;
+        }
+        return resistBonus;
     }
 }

@@ -1,8 +1,9 @@
-package no.edu.ntnu.idatt2001.pederany.wargames;
+package no.edu.ntnu.idatt2001.pederany.wargames.Units;
 
 public class RangedUnit extends Unit {
 
-    private int resistBonus;
+    public int attackBonus;
+    public int resistBonus;
 
     /**
      * specifying the attributes of a ranged unit in a constructor, inheriting from the superclass Unit
@@ -13,8 +14,8 @@ public class RangedUnit extends Unit {
      */
     public RangedUnit(String name, int health, int attack, int armor){
         super.unit(name, health, attack, armor);
-        this.getAttackBonus();
-        this.getResistBonus();
+        this.attackBonus = 3;
+        this.resistBonus = 8;
     }
 
     /**
@@ -30,24 +31,27 @@ public class RangedUnit extends Unit {
      * a get method for the units attack bonus
      * @return  the units attack bonus
      */
-    public int getAttackBonus(){
-        return 3;
+    public int getAttackBonus(String terrain) {
+        if(terrain.toLowerCase().trim().equals("hill")) {
+            return attackBonus + 2;
+        } else if(terrain.toLowerCase().trim().equals("forest")) {
+            return attackBonus - 2;
+        }
+        return attackBonus;
     }
 
     /**
      * a get method for the units resist bonus
      * @return  the units resist bonus
      */
-    public int getResistBonus(){
-        resistBonus = 8;
-        if(resistBonus > 6){
+    public int getResistBonus(String terrain) {
+        if(resistBonus > 6) {
             resistBonus -= 2;
-        }else if(resistBonus > 4){
+        } else if(resistBonus > 4) {
             resistBonus -= 2;
-        }else if(resistBonus > 2){
+        } else if(resistBonus > 2) {
             resistBonus -= 2;
         }
         return resistBonus;
     }
-
 }
