@@ -1,4 +1,6 @@
-package no.edu.ntnu.idatt2001.pederany.wargames;
+package no.edu.ntnu.idatt2001.pederany.wargames.Battle;
+
+import no.edu.ntnu.idatt2001.pederany.wargames.Units.*;
 
 import java.io.*;
 import java.util.ArrayList;

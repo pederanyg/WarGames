@@ -1,4 +1,9 @@
-package no.edu.ntnu.idatt2001.pederany.wargames;
+package no.edu.ntnu.idatt2001.pederany.wargames.Battle;
+
+import no.edu.ntnu.idatt2001.pederany.wargames.Units.CavalryUnit;
+import no.edu.ntnu.idatt2001.pederany.wargames.Units.InfantryUnit;
+import no.edu.ntnu.idatt2001.pederany.wargames.Units.RangedUnit;
+import no.edu.ntnu.idatt2001.pederany.wargames.Units.Unit;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -131,5 +136,9 @@ public class Army {
 
     public List<Unit> getCommanderUnits(){
         return units.stream().filter(com -> com instanceof InfantryUnit).collect(Collectors.toList());
+    }
+
+    public int getTotalArmyHealth() {
+        return units.stream().mapToInt(Unit :: getHealth).sum();
     }
 }
