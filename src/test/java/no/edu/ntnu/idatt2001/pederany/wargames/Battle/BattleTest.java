@@ -1,5 +1,10 @@
-package no.edu.ntnu.idatt2001.pederany.wargames;
+package no.edu.ntnu.idatt2001.pederany.wargames.Battle;
 
+import no.edu.ntnu.idatt2001.pederany.wargames.Battle.Battle;
+import no.edu.ntnu.idatt2001.pederany.wargames.Units.CavalryUnit;
+import no.edu.ntnu.idatt2001.pederany.wargames.Units.CommanderUnit;
+import no.edu.ntnu.idatt2001.pederany.wargames.Units.InfantryUnit;
+import no.edu.ntnu.idatt2001.pederany.wargames.Units.RangedUnit;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 
@@ -8,7 +13,7 @@ import static org.junit.jupiter.api.Assertions.*;
 class BattleTest {
 
     @Test
-    @DisplayName("Testing the battle simulation.")
+    @DisplayName("The simulate method runs a battle in its entirety")
 
     void simulate() {
         Army army1 = new Army("1");
@@ -22,7 +27,7 @@ class BattleTest {
         army2.add(Jonny);
         army2.add(Tommy);
         Battle battle = new Battle(army1, army2);
-        battle.simulate();
+        battle.simulate("hill");
         assertFalse(army1.hasUnits() & army2.hasUnits());
     }
 }

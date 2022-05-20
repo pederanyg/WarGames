@@ -1,4 +1,4 @@
-package no.edu.ntnu.idatt2001.pederany.wargames.Battle;
+package no.edu.ntnu.idatt2001.pederany.wargames;
 
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;

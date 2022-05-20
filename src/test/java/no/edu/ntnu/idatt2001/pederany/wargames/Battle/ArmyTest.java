@@ -1,16 +1,15 @@
-package no.edu.ntnu.idatt2001.pederany.wargames;
+package no.edu.ntnu.idatt2001.pederany.wargames.Battle;
 
+import no.edu.ntnu.idatt2001.pederany.wargames.Units.*;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
-
 import java.util.ArrayList;
-
 import static org.junit.jupiter.api.Assertions.*;
 
 class ArmyTest {
 
     @Test
-    @DisplayName("Testing the add units method.")
+    @DisplayName("Adding a unit to an army")
     void add() {
         Army army = new Army("Ronaldo");
         RangedUnit Ronny = new RangedUnit("Ronny", 100);
@@ -19,7 +18,7 @@ class ArmyTest {
     }
 
     @Test
-    @DisplayName("Testing the add all method.")
+    @DisplayName("Adding a list of units to an army")
     void addAll() {
         Army army = new Army("BI");
         ArrayList<Unit> units = new ArrayList<>();
@@ -36,9 +35,9 @@ class ArmyTest {
     }
 
     @Test
-    @DisplayName("Testing the remove method.")
+    @DisplayName("Removing a unit from an army")
     void remove() {
-        Army army = new Army("Erlends Privstory");
+        Army army = new Army("Erlend's Tapere");
         RangedUnit Ronny = new RangedUnit("Ronny", 100);
         army.add(Ronny);
         army.remove(Ronny);
@@ -46,7 +45,7 @@ class ArmyTest {
     }
 
     @Test
-    @DisplayName("Testing the get all method.")
+    @DisplayName("Getting a list of units at once")
     void getAllUnits() {
         Army army = new Army("BI");
         RangedUnit Ronny = new RangedUnit("Ronny", 100);
@@ -61,7 +60,7 @@ class ArmyTest {
     }
 
     @Test
-    @DisplayName("Testing the method for getting a random unit.")
+    @DisplayName("Getting a random unit")
     void getRandom() {
         Army army = new Army("BI");
         RangedUnit Ronny = new RangedUnit("Ronny", 100);
@@ -76,16 +75,16 @@ class ArmyTest {
     }
 
     @Test
-    @DisplayName("Testing the getInfantryUnits-method")
+    @DisplayName("Getting an Infantry unit")
     void getInfantryUnits() {
-        Army army = new Army("baggo");
+        Army army = new Army("Baggo");
         InfantryUnit Peder = new InfantryUnit("Peder", 222);
         army.add(Peder);
         assertEquals(1,army.getInfantryUnits().size());
     }
 
     @Test
-    @DisplayName("Testing that the Commander unit is not added with the Cavalry units.")
+    @DisplayName("Checking that the Commander units are not added alongside the Cavalry units.")
     void getCavalryUnits() {
         Army army = new Army("Gutta");
         CavalryUnit Nygz = new CavalryUnit("Nygz", 100);
