@@ -113,7 +113,7 @@ public class BattleController {
                         });
                     }
                     Platform.runLater(() -> {
-                        showWinner.setText(winner.getName() + " is the winner!");
+                        showWinner.setText(winner.getName() + " is victorious!");
                         showWinner.setVisible(true);
                         welcomeScreen.setVisible(true);
                         saveBattleWinner.setVisible(true);
@@ -128,7 +128,7 @@ public class BattleController {
 
     @FXML
     public void goBackToWelcomeScreen(ActionEvent e) throws IOException {
-        URL url = new File("src/main/resources/welcomeScreen.fxml").toURI().toURL();
+        URL url = new File("src/main/resources/no.edu.ntnu.idatt2001.pederany.wargames/welcomeScreen.fxml").toURI().toURL();
         FXMLLoader loader = new FXMLLoader(url);
         root = loader.load();
 

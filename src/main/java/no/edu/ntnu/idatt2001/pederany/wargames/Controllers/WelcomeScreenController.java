@@ -17,7 +17,7 @@ public class WelcomeScreenController {
 
     private Stage stage;
     private Scene scene;
-    private Parent root;
+    private Parent root; // (?)
 
     @FXML
     private Button exit;
@@ -29,7 +29,7 @@ public class WelcomeScreenController {
      */
     @FXML
     public void createBattleClicked(ActionEvent event) throws IOException {
-        URL url = new File("src/main/resources/armyOne.fxml").toURI().toURL();
+        URL url = new File("src/main/resources/no.edu.ntnu.idatt2001.pederany.wargames/armyOne.fxml").toURI().toURL();
         Parent root = FXMLLoader.load(url);
         stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
         scene = new Scene(root);
@@ -44,7 +44,7 @@ public class WelcomeScreenController {
      */
     @FXML
     public void gameplayRulesClicked(ActionEvent event) throws IOException {
-        URL url = new File("src/main/resources/rules.fxml").toURI().toURL();
+        URL url = new File("src/main/resources/no.edu.ntnu.idatt2001.pederany.wargames/rules.fxml").toURI().toURL();
         Parent root = FXMLLoader.load(url);
         stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
         scene = new Scene(root);

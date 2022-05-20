@@ -4,39 +4,40 @@
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.text.*?>
 
-<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/11.0.2" xmlns:fx="http://javafx.com/fxml/1" fx:controller="no.edu.ntnu.idatt2001.pederany.wargames.Controllers.ArmyTwoController">
+<AnchorPane prefHeight="423.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/11.0.2" xmlns:fx="http://javafx.com/fxml/1" fx:controller="no.edu.ntnu.idatt2001.pederany.wargames.Controllers.ArmyTwoController">
    <children>
       <Label layoutX="220.0" layoutY="14.0" text="Create Army Two">
          <font>
             <Font size="20.0" />
          </font>
       </Label>
-      <RadioButton layoutX="210.0" layoutY="55.0" mnemonicParsing="false" text="Create An Army From Scratch" />
-      <RadioButton layoutX="214.0" layoutY="252.0" mnemonicParsing="false" text="Import An Army From A File" />
-      <Label layoutX="137.0" layoutY="87.0" text="Infantry Units:" />
-      <Label layoutX="266.0" layoutY="87.0" text="Ranged Units:" />
-      <Label layoutX="388.0" layoutY="87.0" text="Cavalry Units:" />
-      <Label layoutX="171.0" layoutY="104.0" text="0" />
-      <Label layoutX="300.0" layoutY="104.0" text="0" />
-      <Label layoutX="428.0" layoutY="104.0" text="0" />
-      <RadioButton layoutX="149.0" layoutY="208.0" mnemonicParsing="false" text="Commander Baggo" />
-      <RadioButton layoutX="330.0" layoutY="208.0" mnemonicParsing="false" text="Commander Nygz" />
-      <Button layoutX="137.0" layoutY="130.0" mnemonicParsing="false" text="+ 1" />
-      <Button layoutX="175.0" layoutY="130.0" mnemonicParsing="false" text="+ 5" />
-      <Button layoutX="137.0" layoutY="167.0" mnemonicParsing="false" text="- 1 " />
-      <Button layoutX="175.0" layoutY="167.0" mnemonicParsing="false" text="- 5 " />
-      <Button layoutX="266.0" layoutY="130.0" mnemonicParsing="false" text="+ 1" />
-      <Button layoutX="306.0" layoutY="130.0" mnemonicParsing="false" text="+ 5" />
-      <Button layoutX="266.0" layoutY="167.0" mnemonicParsing="false" text="- 1 " />
-      <Button layoutX="306.0" layoutY="167.0" mnemonicParsing="false" text="- 5 " />
-      <Button layoutX="394.0" layoutY="130.0" mnemonicParsing="false" text="+ 1" />
-      <Button layoutX="431.0" layoutY="130.0" mnemonicParsing="false" text="+ 5" />
-      <Button layoutX="394.0" layoutY="167.0" mnemonicParsing="false" text="- 1 " />
-      <Button layoutX="431.0" layoutY="167.0" mnemonicParsing="false" text="- 5 " />
-      <Button layoutX="98.0" layoutY="285.0" mnemonicParsing="false" text="Select a File" />
-      <Button layoutX="436.0" layoutY="335.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="79.0" text="Enter" />
-      <TextField layoutX="197.0" layoutY="335.0" prefHeight="25.0" prefWidth="220.0" />
-      <TextArea layoutX="197.0" layoutY="279.0" prefHeight="38.0" prefWidth="220.0" />
+      <RadioButton fx:id="armyFromScratch" layoutX="210.0" layoutY="55.0" mnemonicParsing="false" onAction="#armyFromScratchSelected" text="Create An Army From Scratch" />
+      <RadioButton fx:id="armyFromFile" layoutX="214.0" layoutY="252.0" mnemonicParsing="false" onAction="#armyFromFileSelected" text="Import An Army From A File" />
+      <Label fx:id="infantryLabel" layoutX="137.0" layoutY="87.0" text="Infantry Units:" />
+      <Label fx:id="rangedLabel" layoutX="266.0" layoutY="87.0" text="Ranged Units:" />
+      <Label fx:id="cavalryLabel" layoutX="388.0" layoutY="87.0" text="Cavalry Units:" />
+      <Label fx:id="infantryAmount" layoutX="171.0" layoutY="104.0" text="0" />
+      <Label fx:id="rangedAmount" layoutX="300.0" layoutY="104.0" text="0" />
+      <Label fx:id="cavalryAmount" layoutX="428.0" layoutY="104.0" text="0" />
+      <RadioButton fx:id="commanderBaggo" layoutX="149.0" layoutY="208.0" mnemonicParsing="false" onAction="#unitsSelected" text="Commander Baggo" />
+      <RadioButton fx:id="commanderNygz" layoutX="330.0" layoutY="208.0" mnemonicParsing="false" onAction="#unitsSelected" text="Commander Nygz" />
+      <Button fx:id="infantryOneUp" layoutX="137.0" layoutY="130.0" mnemonicParsing="false" onAction="#infantryUpClicked" text="+ 1" />
+      <Button fx:id="infantryFiveUp" layoutX="175.0" layoutY="130.0" mnemonicParsing="false" onAction="#infantryUpClicked" text="+ 5" />
+      <Button fx:id="infantryOneDown" layoutX="137.0" layoutY="167.0" mnemonicParsing="false" onAction="#infantryDownClicked" text="- 1 " />
+      <Button fx:id="infantryFiveDown" layoutX="175.0" layoutY="167.0" mnemonicParsing="false" onAction="#infantryDownClicked" text="- 5 " />
+      <Button fx:id="rangedOneUp" layoutX="266.0" layoutY="130.0" mnemonicParsing="false" onAction="#rangedUpClicked" text="+ 1" />
+      <Button fx:id="rangedFiveUp" layoutX="306.0" layoutY="130.0" mnemonicParsing="false" onAction="#rangedUpClicked" text="+ 5" />
+      <Button fx:id="rangedOneDown" layoutX="266.0" layoutY="167.0" mnemonicParsing="false" onAction="#rangedDownClicked" text="- 1 " />
+      <Button fx:id="rangedFiveDown" layoutX="306.0" layoutY="167.0" mnemonicParsing="false" onAction="#rangedDownClicked" text="- 5 " />
+      <Button fx:id="cavalryOneUp" layoutX="394.0" layoutY="130.0" mnemonicParsing="false" onAction="#cavalryUpClicked" text="+ 1" />
+      <Button fx:id="cavalryFiveUp" layoutX="431.0" layoutY="130.0" mnemonicParsing="false" onAction="#cavalryUpClicked" text="+ 5" />
+      <Button fx:id="cavalryOneDown" layoutX="394.0" layoutY="167.0" mnemonicParsing="false" onAction="#cavalryDownClicked" text="- 1 " />
+      <Button fx:id="cavalryFiveDown" layoutX="431.0" layoutY="167.0" mnemonicParsing="false" onAction="#cavalryDownClicked" text="- 5 " />
+      <Button fx:id="selectFile" layoutX="98.0" layoutY="285.0" mnemonicParsing="false" onAction="#selectFileClicked" text="Select a File" />
+      <Button fx:id="nameEnter" layoutX="436.0" layoutY="335.0" mnemonicParsing="false" onAction="#enterName" prefHeight="25.0" prefWidth="79.0" text="Enter" />
+      <TextField fx:id="nameArea" layoutX="197.0" layoutY="335.0" onAction="#enterName" prefHeight="25.0" prefWidth="220.0" />
+      <TextArea fx:id="inputFile" layoutX="197.0" layoutY="279.0" prefHeight="38.0" prefWidth="220.0" />
       <Label layoutX="33.0" layoutY="339.0" text="Enter a Name for the Army:" />
+      <Button fx:id="proceed" layoutX="231.0" layoutY="383.0" mnemonicParsing="false" onAction="#proceedClicked" prefHeight="25.0" prefWidth="152.0" text="Confirm" />
    </children>
 </AnchorPane>

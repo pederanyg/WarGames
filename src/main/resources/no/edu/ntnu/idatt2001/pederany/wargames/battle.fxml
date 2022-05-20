@@ -11,29 +11,29 @@
             <Font size="20.0" />
          </font>
       </Label>
-      <Label layoutX="145.0" layoutY="106.0" text="Army One">
+      <Label fx:id="armyOneName" layoutX="145.0" layoutY="106.0" text="Army One">
          <font>
             <Font size="18.0" />
          </font>
       </Label>
-      <Label layoutX="375.0" layoutY="106.0" text="Army Two">
+      <Label fx:id="armyTwoName" layoutX="375.0" layoutY="106.0" text="Army Two">
          <font>
             <Font size="18.0" />
          </font>
       </Label>
       <Label layoutX="293.0" layoutY="111.0" text="vs." />
-      <ProgressBar layoutX="85.0" layoutY="251.0" prefWidth="200.0" progress="0.0" />
-      <ProgressBar layoutX="315.0" layoutY="251.0" prefWidth="200.0" progress="0.0" />
+      <ProgressBar fx:id="armyOneBar" layoutX="85.0" layoutY="251.0" prefWidth="200.0" progress="0.0" />
+      <ProgressBar fx:id="armyTwoBar" layoutX="315.0" layoutY="251.0" prefWidth="200.0" progress="0.0" />
       <Label layoutX="136.0" layoutY="198.0" text="Remaining Health:" />
       <Label layoutX="367.0" layoutY="198.0" text="Remaining health:" />
-      <Label layoutX="171.0" layoutY="224.0" text="Label" />
-      <Label layoutX="401.0" layoutY="224.0" text="Label" />
-      <Label layoutX="227.0" layoutY="289.0" text="Army is victorious!">
+      <Label fx:id="armyOneHealth" layoutX="171.0" layoutY="224.0" text="Label" />
+      <Label fx:id="armyTwoHealth" layoutX="401.0" layoutY="224.0" text="Label" />
+      <Label fx:id="showWinner" layoutX="227.0" layoutY="289.0" text="Army is victorious!">
          <font>
             <Font size="18.0" />
          </font>
       </Label>
-      <Button layoutX="125.0" layoutY="328.0" mnemonicParsing="false" text="Save Winning Army" />
-      <Button layoutX="336.0" layoutY="328.0" mnemonicParsing="false" text="Return to Welcome Screen" />
+      <Button fx:id="saveBattleWinner" layoutX="125.0" layoutY="328.0" mnemonicParsing="false" onAction="#moveToSaveBattleWinner" text="Save Winning Army" />
+      <Button fx:id="welcomeScreen" layoutX="336.0" layoutY="328.0" mnemonicParsing="false" onAction="#goBackToWelcomeScreen" text="Return to Welcome Screen" />
    </children>
 </AnchorPane>

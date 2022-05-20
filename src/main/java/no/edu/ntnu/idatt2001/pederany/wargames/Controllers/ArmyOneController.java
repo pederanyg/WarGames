@@ -56,12 +56,6 @@ public class ArmyOneController extends ArmyTwoController {
     @FXML
     private Button fiveMoreCavalryUnits;
     @FXML
-    private Label infantryLabelFiveUp;
-    @FXML
-    private Label rangedLabelFiveUp;
-    @FXML
-    private Label cavalryLabelFiveUp;
-    @FXML
     private Button selectFile;
     @FXML
     private TextArea inputFile;
@@ -99,9 +93,6 @@ public class ArmyOneController extends ArmyTwoController {
         fiveMoreInfantryUnits.setVisible(true);
         fiveMoreRangedUnits.setVisible(true);
         fiveMoreCavalryUnits.setVisible(true);
-        infantryLabelFiveUp.setVisible(true);
-        rangedLabelFiveUp.setVisible(true);
-        cavalryLabelFiveUp.setVisible(true);
         selectFile.setVisible(false);
         inputFile.setVisible(false);
         unitsSelected();
@@ -119,9 +110,6 @@ public class ArmyOneController extends ArmyTwoController {
         fiveMoreInfantryUnits.setVisible(false);
         fiveMoreRangedUnits.setVisible(false);
         fiveMoreCavalryUnits.setVisible(false);
-        infantryLabelFiveUp.setVisible(false);
-        rangedLabelFiveUp.setVisible(false);
-        cavalryLabelFiveUp.setVisible(false);
         selectFile.setVisible(true);
         inputFile.setVisible(true);
         if (inputFile.getText().isEmpty()) {
@@ -131,11 +119,11 @@ public class ArmyOneController extends ArmyTwoController {
 
     @FXML
     private void selectFileClicked() throws FileNotFoundException {
-        File recordsDir = new File(System.getProperty("user.home"), ".wargames/records");
+        File recordsDirectory = new File(System.getProperty("user.home"), ".wargames/records");
         FileHandler.checkDirectory();
 
         fileChooser.setTitle("Please select a file");
-        fileChooser.setInitialDirectory(recordsDir);
+        fileChooser.setInitialDirectory(recordsDirectory);
         File file = fileChooser.showOpenDialog(null);
 
         try {
@@ -146,6 +134,7 @@ public class ArmyOneController extends ArmyTwoController {
         if (!inputFile.getText().isEmpty()) {
             proceed.setDisable(false);
             this.army = FileHandler.readFromCsv(inputFile.getText());
+            assert this.army != null;
             nameArea.setText(this.army.getName());
         }
     }
@@ -216,11 +205,10 @@ public class ArmyOneController extends ArmyTwoController {
         }
     }
 
-    /*@FXML
+    @FXML
     public void enterName(){
         name = nameArea.getText();
     }
-     */
 
     @FXML
     public void proceedClicked(ActionEvent event) throws IOException {
@@ -235,7 +223,7 @@ public class ArmyOneController extends ArmyTwoController {
         }else if (armyFromFile.isSelected()){
             this.army.setName(name);
         }
-        URL url = new File("scr/main/resources/armyTwo.fxml").toURI().toURL();
+        URL url = new File("scr/main/resources/no.edu.ntnu.idatt2001.pederany.wargames/armyTwo.fxml").toURI().toURL();
         FXMLLoader loader = new FXMLLoader(url);
         root = loader.load();
         ArmyTwoController armyTwoController = loader.getController();

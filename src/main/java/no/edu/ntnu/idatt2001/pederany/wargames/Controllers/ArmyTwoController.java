@@ -168,11 +168,11 @@ public class ArmyTwoController {
      */
     @FXML
     private void selectFileClicked() throws FileNotFoundException {
-        File recordsDir = new File(System.getProperty("user.home"), ".wargames/records");
+        File recordsDirectory = new File(System.getProperty("user.home"), ".wargames/records");
         FileHandler.checkDirectory();
 
         fileChooser.setTitle("Please select a file");
-        fileChooser.setInitialDirectory(recordsDir);
+        fileChooser.setInitialDirectory(recordsDirectory);
         File file = fileChooser.showOpenDialog(null);
 
         try {
@@ -302,12 +302,10 @@ public class ArmyTwoController {
         }
     }
 
-    /*
     @FXML
     public void enterName() {
         name = nameArea.getText();
     }
-     */
 
     /**
      * Creates an army, and transfers it to ready.fxml scene

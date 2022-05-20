@@ -106,7 +106,7 @@ public class ReadyController {
     @FXML
     public void startBattleClicked(ActionEvent event) throws IOException, InterruptedException {
 
-        URL url = new File("src/main/resources/battle.fxml").toURI().toURL();
+        URL url = new File("src/main/resources/no.edu.ntnu.idatt2001.pederany.wargames/battle.fxml").toURI().toURL();
         FXMLLoader loader = new FXMLLoader(url);
         root = loader.load();
 
