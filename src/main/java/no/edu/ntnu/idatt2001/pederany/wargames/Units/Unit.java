@@ -21,6 +21,8 @@ public abstract class Unit {
             throw new IllegalArgumentException("A unit's attack can never be negative.");
         } else if (armor < 0) {
             throw new IllegalArgumentException("A unit's armor can never be negative.");
+        } else if (name.isBlank()) {
+            throw new IllegalArgumentException("The unit requires a name.");
         }
         this.name = name;
         this.health = health;

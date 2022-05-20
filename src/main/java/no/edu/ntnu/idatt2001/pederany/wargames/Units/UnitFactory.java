@@ -25,7 +25,7 @@ public class UnitFactory {
     }
 
     /**
-     * Creates a list of units based on several parameters
+     * Creates a list of units based on various parameters
      * @param unitType Type of units
      * @param name Name of the units
      * @param health Health of the units

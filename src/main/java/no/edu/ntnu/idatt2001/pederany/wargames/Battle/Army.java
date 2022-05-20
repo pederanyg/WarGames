@@ -13,8 +13,8 @@ import java.util.stream.Collectors;
 
 public class Army {
 
-    private String name;
-    private ArrayList<Unit> units = new ArrayList<>();
+    public String name;
+    public ArrayList<Unit> units;
     public Random r = new Random();
 
     /**
@@ -23,6 +23,7 @@ public class Army {
      */
     public Army(String name){
         this.name = name;
+        this.units = new ArrayList<Unit>();
     }
 
     /**
@@ -35,12 +36,21 @@ public class Army {
         this.units = units;
     }
 
+    public Army(Army army) {
+        this.name = army.getName();
+        this.units = army.getAllUnits();
+    }
+
     /**
      * a get method for the army's name
      * @return      the army's name
      */
     public String getName() {
         return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
     }
 
     /**
