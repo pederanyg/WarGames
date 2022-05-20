@@ -1,14 +1,54 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import java.lang.*?>
-<?import java.util.*?>
-<?import javafx.scene.*?>
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
 
-<AnchorPane xmlns="http://javafx.com/javafx"
-            xmlns:fx="http://javafx.com/fxml"
-            fx:controller="no.edu.ntnu.idatt2001.pederany.wargames.Controllers.ReadyController"
-            prefHeight="400.0" prefWidth="600.0">
-
+<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/11.0.2" xmlns:fx="http://javafx.com/fxml/1" fx:controller="no.edu.ntnu.idatt2001.pederany.wargames.Controllers.ReadyController">
+   <children>
+      <Label layoutX="186.0" layoutY="43.0" text="Are You Ready For Battle?">
+         <font>
+            <Font size="20.0" />
+         </font>
+      </Label>
+      <Label layoutX="287.0" layoutY="109.0" text="Army One" />
+      <Label layoutX="462.0" layoutY="109.0" text="Army Two" />
+      <Label layoutX="96.0" layoutY="143.0" text="Infantry Units:" />
+      <Label layoutX="95.0" layoutY="182.0" text="Ranged Units:" />
+      <Label layoutX="96.0" layoutY="221.0" text="Cavalry Units:" />
+      <Label layoutX="83.0" layoutY="262.0" text="Commander Units:" />
+      <Label fx:id="armyOneInfantry" layoutX="300.0" layoutY="143.0" text="Label" />
+      <Label fx:id="armyTwoInfantry" layoutX="475.0" layoutY="143.0" text="Label" />
+      <Label fx:id="armyOneRanged" layoutX="300.0" layoutY="182.0" text="Label" />
+      <Label fx:id="armyTwoRanged" layoutX="475.0" layoutY="182.0" text="Label" />
+      <Label fx:id="armyOneCavalry" layoutX="300.0" layoutY="221.0" text="Label" />
+      <Label fx:id="armyTwoCavalry" layoutX="475.0" layoutY="221.0" text="Label" />
+      <Label fx:id="armyOneCommander" layoutX="300.0" layoutY="262.0" text="Label" />
+      <Label fx:id="armyTwoCommander" layoutX="475.0" layoutY="262.0" text="Label" />
+      <Label layoutX="254.0" layoutY="293.0" text="Battle terrain">
+         <font>
+            <Font size="16.0" />
+         </font>
+      </Label>
+      <RadioButton fx:id="hill" layoutX="277.0" layoutY="324.0" mnemonicParsing="false" onAction="#terrainClicked" text="Hill">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </RadioButton>
+      <RadioButton fx:id="forest" layoutX="186.0" layoutY="324.0" mnemonicParsing="false" onAction="#terrainClicked" text="Forest">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </RadioButton>
+      <RadioButton fx:id="plains" layoutX="353.0" layoutY="324.0" mnemonicParsing="false" onAction="#terrainClicked" text="Plains">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </RadioButton>
+      <Button fx:id="battle" layoutX="253.0" layoutY="356.0" mnemonicParsing="false" onAction="#startBattleClicked" text="Start Battle!">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </Button>
+   </children>
 </AnchorPane>

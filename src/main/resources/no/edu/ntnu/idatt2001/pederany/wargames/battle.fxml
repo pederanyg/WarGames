@@ -1,14 +1,39 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import java.lang.*?>
-<?import java.util.*?>
-<?import javafx.scene.*?>
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
 
-<AnchorPane xmlns="http://javafx.com/javafx"
-            xmlns:fx="http://javafx.com/fxml"
-            fx:controller="no.edu.ntnu.idatt2001.pederany.wargames.Controllers.BattleController"
-            prefHeight="400.0" prefWidth="600.0">
-
+<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/11.0.2" xmlns:fx="http://javafx.com/fxml/1" fx:controller="no.edu.ntnu.idatt2001.pederany.wargames.Controllers.BattleController">
+   <children>
+      <Label layoutX="226.0" layoutY="45.0" text="The battle is live!">
+         <font>
+            <Font size="20.0" />
+         </font>
+      </Label>
+      <Label layoutX="145.0" layoutY="106.0" text="Army One">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </Label>
+      <Label layoutX="375.0" layoutY="106.0" text="Army Two">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </Label>
+      <Label layoutX="293.0" layoutY="111.0" text="vs." />
+      <ProgressBar layoutX="85.0" layoutY="251.0" prefWidth="200.0" progress="0.0" />
+      <ProgressBar layoutX="315.0" layoutY="251.0" prefWidth="200.0" progress="0.0" />
+      <Label layoutX="136.0" layoutY="198.0" text="Remaining Health:" />
+      <Label layoutX="367.0" layoutY="198.0" text="Remaining health:" />
+      <Label layoutX="171.0" layoutY="224.0" text="Label" />
+      <Label layoutX="401.0" layoutY="224.0" text="Label" />
+      <Label layoutX="227.0" layoutY="289.0" text="Army is victorious!">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </Label>
+      <Button layoutX="125.0" layoutY="328.0" mnemonicParsing="false" text="Save Winning Army" />
+      <Button layoutX="336.0" layoutY="328.0" mnemonicParsing="false" text="Return to Welcome Screen" />
+   </children>
 </AnchorPane>

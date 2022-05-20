@@ -6,11 +6,24 @@
 
 <AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/11.0.2" xmlns:fx="http://javafx.com/fxml/1" fx:controller="no.edu.ntnu.idatt2001.pederany.wargames.Controllers.WelcomeScreenController">
    <children>
-      <Button layoutX="274.0" layoutY="188.0" mnemonicParsing="false" text="Button" />
-      <Label layoutX="286.0" layoutY="102.0" text="Welcome to War Games!">
+      <Button layoutX="220.0" layoutY="178.0" mnemonicParsing="false" onAction="#createBattleClicked" text="Create a Battle">
          <font>
-            <Font size="18.0" />
+            <Font size="20.0" />
+         </font></Button>
+      <Label layoutX="167.0" layoutY="97.0" text="Welcome to War Games!">
+         <font>
+            <Font size="24.0" />
          </font>
       </Label>
+      <Button fx:id="exit" layoutX="544.0" layoutY="14.0" mnemonicParsing="false" onAction="#exitWindow" prefHeight="18.0" prefWidth="42.0" text="Exit">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </Button>
+      <Button layoutX="229.0" layoutY="265.0" mnemonicParsing="false" onAction="#gameplayRulesClicked" prefHeight="30.0" prefWidth="139.0" text="Gameplay Rules">
+         <font>
+            <Font size="16.0" />
+         </font>
+      </Button>
    </children>
 </AnchorPane>
