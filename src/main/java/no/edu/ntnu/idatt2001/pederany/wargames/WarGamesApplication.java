@@ -11,7 +11,7 @@ public class WarGamesApplication extends Application {
     public void start(Stage stage) throws IOException {
         FXMLLoader fxmlLoader = new FXMLLoader(WarGamesApplication.class.getResource("welcomeScreen.fxml"));
         Scene scene = new Scene(fxmlLoader.load(), 600, 400);
-        stage.setTitle("War Games");
+        stage.setTitle("WarGames");
         stage.setScene(scene);
         stage.show();
     }

@@ -70,7 +70,6 @@ public class ArmyOneController extends ArmyTwoController {
     @FXML
     private RadioButton commanderNygz;
 
-
     @FXML
     public void initialize() {
         ToggleGroup scratchOrFile = new ToggleGroup();
@@ -93,6 +92,11 @@ public class ArmyOneController extends ArmyTwoController {
         fiveMoreInfantryUnits.setVisible(true);
         fiveMoreRangedUnits.setVisible(true);
         fiveMoreCavalryUnits.setVisible(true);
+        fiveLessInfantryUnits.setVisible(true);
+        fiveLessRangedUnits.setVisible(true);
+        fiveLessCavalryUnits.setVisible(true);
+        commanderBaggo.setVisible(true);
+        commanderNygz.setVisible(true);
         selectFile.setVisible(false);
         inputFile.setVisible(false);
         unitsSelected();
@@ -223,7 +227,7 @@ public class ArmyOneController extends ArmyTwoController {
         }else if (armyFromFile.isSelected()){
             this.army.setName(name);
         }
-        URL url = new File("scr/main/resources/no.edu.ntnu.idatt2001.pederany.wargames/armyTwo.fxml").toURI().toURL();
+        URL url = new File("scr/main/resources/no/edu/ntnu/idatt2001/pederany/wargames/armyTwo.fxml").toURI().toURL();
         FXMLLoader loader = new FXMLLoader(url);
         root = loader.load();
         ArmyTwoController armyTwoController = loader.getController();

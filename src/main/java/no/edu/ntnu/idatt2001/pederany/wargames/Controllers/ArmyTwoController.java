@@ -108,14 +108,14 @@ public class ArmyTwoController {
         infantryAmount.setVisible(true);
         rangedAmount.setVisible(true);
         cavalryAmount.setVisible(true);
-        commanderBaggo.setVisible(true);
-        commanderNygz.setVisible(true);
         infantryLabel.setVisible(true);
         rangedLabel.setVisible(true);
         cavalryLabel.setVisible(true);
+        commanderBaggo.setVisible(true);
+        commanderNygz.setVisible(true);
         infantryOneUp.setVisible(true);
-        infantryFiveUp.setVisible(true);
         infantryOneDown.setVisible(true);
+        infantryFiveUp.setVisible(true);
         infantryFiveDown.setVisible(true);
         rangedOneUp.setVisible(true);
         rangedOneDown.setVisible(true);
@@ -330,7 +330,7 @@ public class ArmyTwoController {
         } else if(armyFromFile.isSelected()) {
             this.armyTwo.setName(name);
         }
-        URL url = new File("src/main/resources/ready.fxml").toURI().toURL();
+        URL url = new File("src/main/resources/no/edu/ntnu/idatt2001/pederany/wargames/ready.fxml").toURI().toURL();
         FXMLLoader loader = new FXMLLoader(url);
         root = loader.load();
         ReadyController readyController = loader.getController();

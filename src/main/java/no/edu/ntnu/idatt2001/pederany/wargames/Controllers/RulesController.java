@@ -19,7 +19,7 @@ public class RulesController {
 
     @FXML
     public void backToWelcomeScreen(ActionEvent event) throws IOException {
-        URL url = new File("src/main/resources/no.edu.ntnu.idatt2001.pederany.wargames/welcomeScreen.fxml").toURI().toURL();
+        URL url = new File("src/main/resources/no/edu/ntnu/idatt2001/pederany/wargames/welcomeScreen.fxml").toURI().toURL();
         Parent root = FXMLLoader.load(url);
         stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
         scene = new Scene(root);
