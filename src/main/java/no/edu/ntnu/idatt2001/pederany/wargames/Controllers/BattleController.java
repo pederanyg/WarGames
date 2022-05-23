@@ -98,29 +98,26 @@ public class BattleController {
         armyOneHealth.setText(armyOneHealthOverTime.get(0) + "/" + armyOneHealthOverTime.get(0));
         armyTwoHealth.setText(armyTwoHealthOverTime.get(0) + "/" + armyTwoHealthOverTime.get(0));
 
-        Runnable task = new Runnable() {
-            @Override
-            public void run() {
-                try {
-                    for(int i = 1; i < armyOneHealthOverTime.size(); i++) {
-                        final int j = i;
-                        Thread.sleep(200);
-                        Platform.runLater(() -> {
-                            armyOneHealth.setText(armyOneHealthOverTime.get(j) + "/" + armyOneHealthOverTime.get(0));
-                            armyTwoHealth.setText(armyTwoHealthOverTime.get(j) + "/" + armyTwoHealthOverTime.get(0));
-                            armyOneBar.setProgress(armyOneHealthOverTime.get(j) / (float) armyOneHealthOverTime.get(0));
-                            armyTwoBar.setProgress(armyTwoHealthOverTime.get(j) / (float) armyTwoHealthOverTime.get(0));
-                        });
-                    }
+        Runnable task = () -> {
+            try {
+                for(int i = 1; i < armyOneHealthOverTime.size(); i++) {
+                    final int j = i;
+                    Thread.sleep(200);
                     Platform.runLater(() -> {
-                        showWinner.setText(winner.getName() + " is victorious!");
-                        showWinner.setVisible(true);
-                        welcomeScreen.setVisible(true);
-                        saveBattleWinner.setVisible(true);
+                        armyOneHealth.setText(armyOneHealthOverTime.get(j) + "/" + armyOneHealthOverTime.get(0));
+                        armyTwoHealth.setText(armyTwoHealthOverTime.get(j) + "/" + armyTwoHealthOverTime.get(0));
+                        armyOneBar.setProgress(armyOneHealthOverTime.get(j) / (float) armyOneHealthOverTime.get(0));
+                        armyTwoBar.setProgress(armyTwoHealthOverTime.get(j) / (float) armyTwoHealthOverTime.get(0));
                     });
-                } catch (InterruptedException e) {
-                    e.printStackTrace();
                 }
+                Platform.runLater(() -> {
+                    showWinner.setText(winner.getName() + " is victorious!");
+                    showWinner.setVisible(true);
+                    welcomeScreen.setVisible(true);
+                    saveBattleWinner.setVisible(true);
+                });
+            } catch (InterruptedException e) {
+                e.printStackTrace();
             }
         };
         new Thread(task).start();
