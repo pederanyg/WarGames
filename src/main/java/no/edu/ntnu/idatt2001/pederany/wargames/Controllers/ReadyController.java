@@ -29,37 +29,26 @@ public class ReadyController {
 
     @FXML
     private Button battle;
-
     @FXML
     private Label armyOneCommander;
-
     @FXML
     private Label armyOneInfantry;
-
     @FXML
     private Label armyOneRanged;
-
     @FXML
     private Label armyOneCavalry;
-
     @FXML
     private Label armyTwoCommander;
-
     @FXML
     private Label armyTwoInfantry;
-
     @FXML
     private Label armyTwoRanged;
-
     @FXML
     private Label armyTwoCavalry;
-
     @FXML
     private RadioButton forest;
-
     @FXML
     private RadioButton hill;
-
     @FXML
     private RadioButton plains;
 

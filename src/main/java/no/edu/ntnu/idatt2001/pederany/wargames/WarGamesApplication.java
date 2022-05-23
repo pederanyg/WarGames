@@ -10,7 +10,7 @@ public class WarGamesApplication extends Application {
     @Override
     public void start(Stage stage) throws IOException {
         FXMLLoader fxmlLoader = new FXMLLoader(WarGamesApplication.class.getResource("welcomeScreen.fxml"));
-        Scene scene = new Scene(fxmlLoader.load(), 600, 400);
+        Scene scene = new Scene(fxmlLoader.load(), 600, 410);
         stage.setTitle("WarGames");
         stage.setScene(scene);
         stage.show();

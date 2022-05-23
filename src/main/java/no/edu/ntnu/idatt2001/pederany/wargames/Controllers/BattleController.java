@@ -142,14 +142,13 @@ public class BattleController {
     public void moveToSaveBattleWinner(ActionEvent e) throws IOException {
         FileHandler.checkDirectory();
         StringBuilder path = new StringBuilder();
-        path.append("C:\\Brukere\\peder\\.wargames\\records\\");
+        path.append("C:\\users\\peder\\.wargames\\records\\");
         if(winner.getName().equals(copyArmyOne.getName())) {
             winner = copyArmyOne;
         } else {
             winner = copyArmyTwo;
         }
-        //TODO Fix the health values being completely off when an army is saved
-        //TODO Look at the setHealth-method, as unit damage is not calculated properly
+
         path.append(winner.getName()).append(".csv");
         FileHandler.writeToCsv(FileHandler.convertToString(winner), path.toString());
         saveBattleWinner.setDisable(true);

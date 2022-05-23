@@ -6,25 +6,25 @@
 
 <AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/11.0.2" xmlns:fx="http://javafx.com/fxml/1" fx:controller="no.edu.ntnu.idatt2001.pederany.wargames.Controllers.RulesController">
    <children>
-      <Button layoutX="251.0" layoutY="320.0" mnemonicParsing="false" onAction="#backToWelcomeScreen" prefHeight="37.0" prefWidth="97.0" text="Back">
+      <Button layoutX="251.0" layoutY="332.0" mnemonicParsing="false" onAction="#backToWelcomeScreen" prefHeight="37.0" prefWidth="97.0" text="Back">
          <font>
             <Font size="16.0" />
          </font>
       </Button>
-      <Label layoutX="229.0" layoutY="36.0" text="Gameplay Rules">
+      <Label layoutX="224.0" layoutY="37.0" text="Gameplay Rules">
          <font>
-            <Font size="20.0" />
+            <Font name="System Bold" size="20.0" />
          </font>
       </Label>
-      <Label layoutX="106.0" layoutY="81.0" text="In WarGames you create two armies and simulate a battle between them" />
-      <Label layoutX="41.0" layoutY="106.0" text="You can either create your own customized army from scratch, or you can import a complete one" />
+      <Label layoutX="106.0" layoutY="81.0" text="In WarGames you create two armies and simulate a battle between them." />
+      <Label layoutX="41.0" layoutY="106.0" text="You can either create your own customized army from scratch, or you can import a complete one." />
       <Label layoutX="146.0" layoutY="151.0" text="An army can consist of any number of the following units:">
          <font>
             <Font name="System Bold" size="12.0" />
          </font></Label>
       <Label layoutX="101.0" layoutY="182.0" text="The Infantry Unit: A diverse unit that has enhanced abilities in the Forest terrain" textFill="RED" />
       <Label layoutX="35.0" layoutY="215.0" text="The Ranged Unit: A unit that can damage opponents from a distance. The Hill terrain favors this unit" textFill="#1e00ff" />
-      <Label layoutX="55.0" layoutY="251.0" text="The Cavalry Unit: A unit that deals extra damage eraly on in a battle, favoring the Plains terrain" textFill="#008724" />
+      <Label layoutX="55.0" layoutY="251.0" text="The Cavalry Unit: A unit that deals extra damage early on in a battle, favoring the Plains terrain" textFill="#008724" />
       <Label layoutX="33.0" layoutY="285.0" prefHeight="17.0" prefWidth="541.0" text="The Commander Unit: An advanced Cavalry unit, that provides bonuses to other units while still alive" textFill="#24005d" />
    </children>
 </AnchorPane>

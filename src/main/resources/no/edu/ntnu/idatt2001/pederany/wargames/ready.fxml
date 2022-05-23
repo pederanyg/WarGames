@@ -25,7 +25,7 @@
       <Label fx:id="armyTwoCavalry" layoutX="475.0" layoutY="221.0" text="Label" />
       <Label fx:id="armyOneCommander" layoutX="300.0" layoutY="262.0" text="Label" />
       <Label fx:id="armyTwoCommander" layoutX="475.0" layoutY="262.0" text="Label" />
-      <Label layoutX="254.0" layoutY="293.0" text="Battle terrain">
+      <Label layoutX="222.0" layoutY="290.0" text="Select a Battle Terrain:">
          <font>
             <Font size="16.0" />
          </font>

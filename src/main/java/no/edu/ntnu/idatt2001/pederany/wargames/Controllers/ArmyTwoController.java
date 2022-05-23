@@ -318,14 +318,14 @@ public class ArmyTwoController {
             ArrayList<Unit> totalUnits = new ArrayList<Unit>();
 
             if (commanderNygz.isSelected()) {
-                totalUnits.add(UnitFactory.createUnit("Commander Unit", "Nygz", 100));
+                totalUnits.add(UnitFactory.createUnit("CommanderUnit", "Nygz", 100));
             } else if (commanderBaggo.isSelected()) {
-                totalUnits.add(UnitFactory.createUnit("Commander Unit", "Baggo", 100));
+                totalUnits.add(UnitFactory.createUnit("CommanderUnit", "Baggo", 100));
             }
 
-            totalUnits.addAll(UnitFactory.createListOfUnits("Infantry Unit", "Goblin", 50, Integer.parseInt(infantryAmount.getText())));
-            totalUnits.addAll(UnitFactory.createListOfUnits("Ranged Unit", "Archer", 30, Integer.parseInt(rangedAmount.getText())));
-            totalUnits.addAll(UnitFactory.createListOfUnits("Cavalry Unit", "Knight", 70, Integer.parseInt(cavalryAmount.getText())));
+            totalUnits.addAll(UnitFactory.createListOfUnits("InfantryUnit", "Goblin", 50, Integer.parseInt(infantryAmount.getText())));
+            totalUnits.addAll(UnitFactory.createListOfUnits("RangedUnit", "Archer", 30, Integer.parseInt(rangedAmount.getText())));
+            totalUnits.addAll(UnitFactory.createListOfUnits("CavalryUnit", "Knight", 70, Integer.parseInt(cavalryAmount.getText())));
             armyTwo = new Army(name, totalUnits);
         } else if(armyFromFile.isSelected()) {
             this.armyTwo.setName(name);

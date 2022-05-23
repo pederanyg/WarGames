@@ -6,9 +6,9 @@
 
 <AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/11.0.2" xmlns:fx="http://javafx.com/fxml/1" fx:controller="no.edu.ntnu.idatt2001.pederany.wargames.Controllers.BattleController">
    <children>
-      <Label layoutX="226.0" layoutY="45.0" text="The battle is live!">
+      <Label layoutX="188.0" layoutY="43.0" text="The battle is live!">
          <font>
-            <Font size="20.0" />
+            <Font name="System Bold" size="28.0" />
          </font>
       </Label>
       <Label fx:id="armyOneName" layoutX="145.0" layoutY="106.0" text="Army One">
