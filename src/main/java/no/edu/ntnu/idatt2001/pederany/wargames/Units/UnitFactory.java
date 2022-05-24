@@ -16,10 +16,10 @@ public class UnitFactory {
     public static Unit createUnit(String unitType, String name, int health) {
         Unit unit = null;
         switch (unitType) {
-            case "Infantry Unit" -> unit = new InfantryUnit(name, health);
-            case "Ranged Unit" -> unit = new RangedUnit(name, health);
-            case "Cavalry Unit" -> unit = new CavalryUnit(name, health);
-            case "Commander Unit" -> unit = new CommanderUnit(name, health);
+            case "InfantryUnit" -> unit = new InfantryUnit(name, health);
+            case "RangedUnit" -> unit = new RangedUnit(name, health);
+            case "CavalryUnit" -> unit = new CavalryUnit(name, health);
+            case "CommanderUnit" -> unit = new CommanderUnit(name, health);
         }
         return unit;
     }
@@ -36,23 +36,22 @@ public class UnitFactory {
         ArrayList<Unit> listOfUnits = new ArrayList<Unit>();
 
         switch (unitType) {
-            case "Infantry Unit":
+            case "InfantryUnit":
                 for(int i = 0; i < n; i++) {
-                    //System.out.println("hei");
                     listOfUnits.add(new InfantryUnit(name, health));
                 }
                 break;
-            case "Ranged Unit":
+            case "RangedUnit":
                 for(int i = 0; i < n; i++) {
                     listOfUnits.add(new RangedUnit(name, health));
                 }
                 break;
-            case "Cavalry Unit":
+            case "CavalryUnit":
                 for(int i = 0; i < n; i++) {
                     listOfUnits.add(new CavalryUnit(name, health));
                 }
                 break;
-            case "Commander Unit":
+            case "CommanderUnit":
                 for(int i = 0; i < n; i++) {
                     listOfUnits.add(new CommanderUnit(name, health));
                 }

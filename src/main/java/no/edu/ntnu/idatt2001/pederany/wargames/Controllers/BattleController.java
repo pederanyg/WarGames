@@ -72,6 +72,7 @@ public class BattleController {
         showWinner.setVisible(false);
         welcomeScreen.setVisible(false);
         saveBattleWinner.setVisible(false);
+        restartBattle.setVisible(false);
     }
 
     /**
@@ -118,6 +119,7 @@ public class BattleController {
                     showWinner.setVisible(true);
                     welcomeScreen.setVisible(true);
                     saveBattleWinner.setVisible(true);
+                    restartBattle.setVisible(true);
                 });
             } catch (InterruptedException e) {
                 e.printStackTrace();

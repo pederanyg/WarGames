@@ -37,7 +37,7 @@ public class CavalryUnit extends Unit {
         } else if(attackBonus > 2) {
             attackBonus -= 4;
         }
-        if(terrain.toLowerCase().trim().equals("plain")) {
+        if(terrain.toLowerCase().trim().equals("plains")) {
             return attackBonus + 3;
         }
         return attackBonus;

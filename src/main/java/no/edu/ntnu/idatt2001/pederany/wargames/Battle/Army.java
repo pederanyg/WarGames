@@ -1,9 +1,6 @@
 package no.edu.ntnu.idatt2001.pederany.wargames.Battle;
 
-import no.edu.ntnu.idatt2001.pederany.wargames.Units.CavalryUnit;
-import no.edu.ntnu.idatt2001.pederany.wargames.Units.InfantryUnit;
-import no.edu.ntnu.idatt2001.pederany.wargames.Units.RangedUnit;
-import no.edu.ntnu.idatt2001.pederany.wargames.Units.Unit;
+import no.edu.ntnu.idatt2001.pederany.wargames.Units.*;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -14,7 +11,7 @@ import java.util.stream.Collectors;
 public class Army {
 
     public String name;
-    public ArrayList<Unit> units;
+    public ArrayList<Unit> units = new ArrayList<Unit>();
     public Random r = new Random();
 
     /**
@@ -23,7 +20,6 @@ public class Army {
      */
     public Army(String name){
         this.name = name;
-        this.units = new ArrayList<Unit>();
     }
 
     /**
@@ -38,7 +34,9 @@ public class Army {
 
     public Army(Army army) {
         this.name = army.getName();
-        this.units = army.getAllUnits();
+        for (Unit unit : army.getAllUnits()) {
+            this.units.add(UnitFactory.createUnit(unit.getClass().getSimpleName(), unit.getName(), unit.getHealth()));
+        }
     }
 
     /**
@@ -57,7 +55,10 @@ public class Army {
      * a method for adding a unit to an army
      * @param unit  the unit that is added to the army
      */
-    public void add(Unit unit){
+    public void add(Unit unit) throws IllegalArgumentException {
+        if (unit == null) {
+            throw new IllegalArgumentException("This Unit does not exist.");
+        }
         units.add(unit);
     }
 
@@ -145,7 +146,7 @@ public class Army {
     }
 
     public List<Unit> getCommanderUnits(){
-        return units.stream().filter(com -> com instanceof InfantryUnit).collect(Collectors.toList());
+        return units.stream().filter(com -> com instanceof CommanderUnit).collect(Collectors.toList());
     }
 
     public int getTotalArmyHealth() {
