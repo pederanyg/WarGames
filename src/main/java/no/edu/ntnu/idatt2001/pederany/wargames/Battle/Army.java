@@ -57,7 +57,7 @@ public class Army {
      */
     public void add(Unit unit) throws IllegalArgumentException {
         if (unit == null) {
-            throw new IllegalArgumentException("This Unit does not exist.");
+            throw new IllegalArgumentException("This unit does not exist.");
         }
         units.add(unit);
     }

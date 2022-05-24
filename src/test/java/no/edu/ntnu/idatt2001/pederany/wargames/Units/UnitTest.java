@@ -26,13 +26,13 @@ class UnitTest {
 
     public void reducedHealthWhenAttacked() {
         CavalryUnit unit_1 = new CavalryUnit("Peder", 100);
-        assertEquals(6, unit_1.getAttackBonus("HILL"));
-        assertEquals(2, unit_1.getAttackBonus("HILL"));
-        assertEquals(2, unit_1.getAttackBonus("HILL"));
+        assertEquals(6, unit_1.getAttackBonus("hill"));
+        assertEquals(2, unit_1.getAttackBonus("hill"));
+        assertEquals(2, unit_1.getAttackBonus("hill"));
     }
 
     @Test
-    @DisplayName("The first 'charge' will yield 6 attack-bonus, and then it'll be 2.")
+    @DisplayName("The first 'charge' will yield 6 attack-bonus, and then it will be 2.")
 
     public void attackBonusOnFirstAttack() {
         CavalryUnit unit_1 = new CavalryUnit("Ron", 13);
@@ -51,14 +51,14 @@ class UnitTest {
     }
 
     @Test
-    @DisplayName("T")
+    @DisplayName("Exception is thrown if unit type is invalid.")
     public void wrongUnitTypeInputInFactory(){
         Exception exception = assertThrows(IllegalArgumentException.class, () -> {
             Army army = new Army("NTNU");
             Unit unit1 = UnitFactory.createUnit("Wizard", "Nygaard", 12);
             army.add(unit1);
         });
-        String expectedMessage = "This Unit does not exist.";
+        String expectedMessage = "This unit does not exist.";
         String actualMessage = exception.getMessage();
         assertTrue(actualMessage.contains(expectedMessage));
     }
