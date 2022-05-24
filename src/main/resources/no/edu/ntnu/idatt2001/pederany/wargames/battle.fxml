@@ -12,12 +12,12 @@
             <Image url="@Images/6.png" />
          </image>
       </ImageView>
-      <Label fx:id="armyOneName" layoutX="144.0" layoutY="128.0" text="Army One">
+      <Label fx:id="armyOneName" layoutX="140.0" layoutY="128.0" prefHeight="27.0" prefWidth="89.0" text="Army One" textAlignment="CENTER">
          <font>
             <Font size="18.0" />
          </font>
       </Label>
-      <Label fx:id="armyTwoName" layoutX="375.0" layoutY="128.0" text="Army Two">
+      <Label fx:id="armyTwoName" layoutX="370.0" layoutY="128.0" prefHeight="27.0" prefWidth="89.0" text="Army Two">
          <font>
             <Font size="18.0" />
          </font>
