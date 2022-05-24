@@ -1,5 +1,6 @@
 package no.edu.ntnu.idatt2001.pederany.wargames.Units;
 
+import no.edu.ntnu.idatt2001.pederany.wargames.Battle.Army;
 import no.edu.ntnu.idatt2001.pederany.wargames.Units.CavalryUnit;
 import no.edu.ntnu.idatt2001.pederany.wargames.Units.RangedUnit;
 import org.junit.jupiter.api.DisplayName;
@@ -39,5 +40,26 @@ class UnitTest {
         assertEquals(2, unit_1.getAttackBonus("hill"));
         assertEquals(2, unit_1.getAttackBonus("hill"));
         assertEquals(2, unit_1.getAttackBonus("hill"));
+    }
+
+    @Test
+    @DisplayName("Create a new unit based on input.")
+
+    public void createCorrectUnitFromInput() {
+        Unit unit = UnitFactory.createUnit("InfantryUnit", "Nygaard", 15);
+        assertTrue(unit instanceof InfantryUnit);
+    }
+
+    @Test
+    @DisplayName("T")
+    public void wrongUnitTypeInputInFactory(){
+        Exception exception = assertThrows(IllegalArgumentException.class, () -> {
+            Army army = new Army("NTNU");
+            Unit unit1 = UnitFactory.createUnit("Wizard", "Nygaard", 12);
+            army.add(unit1);
+        });
+        String expectedMessage = "This Unit does not exist.";
+        String actualMessage = exception.getMessage();
+        assertTrue(actualMessage.contains(expectedMessage));
     }
 }

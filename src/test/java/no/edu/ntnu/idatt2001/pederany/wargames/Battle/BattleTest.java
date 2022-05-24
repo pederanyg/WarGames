@@ -13,7 +13,7 @@ import static org.junit.jupiter.api.Assertions.*;
 class BattleTest {
 
     @Test
-    @DisplayName("The simulate method runs a battle in its entirety")
+    @DisplayName("The simulate method successfully runs a battle")
 
     void simulate() {
         Army army1 = new Army("1");

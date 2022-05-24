@@ -11,7 +11,7 @@ class ArmyTest {
     @Test
     @DisplayName("Adding a unit to an army")
     void add() {
-        Army army = new Army("Ronaldo");
+        Army army = new Army("NTNU");
         RangedUnit Ronny = new RangedUnit("Ronny", 100);
         army.add(Ronny);
         assertTrue(army.hasUnits());
@@ -37,7 +37,7 @@ class ArmyTest {
     @Test
     @DisplayName("Removing a unit from an army")
     void remove() {
-        Army army = new Army("Erlend's Tapere");
+        Army army = new Army("NTNU");
         RangedUnit Ronny = new RangedUnit("Ronny", 100);
         army.add(Ronny);
         army.remove(Ronny);
@@ -47,7 +47,7 @@ class ArmyTest {
     @Test
     @DisplayName("Getting a list of units at once")
     void getAllUnits() {
-        Army army = new Army("BI");
+        Army army = new Army("NTNU");
         RangedUnit Ronny = new RangedUnit("Ronny", 100);
         CavalryUnit Conny = new CavalryUnit("Conny", 200);
         InfantryUnit Jonny = new InfantryUnit("Jonny", 300);
@@ -62,7 +62,7 @@ class ArmyTest {
     @Test
     @DisplayName("Getting a random unit")
     void getRandom() {
-        Army army = new Army("BI");
+        Army army = new Army("NTNU");
         RangedUnit Ronny = new RangedUnit("Ronny", 100);
         CavalryUnit Conny = new CavalryUnit("Conny", 200);
         InfantryUnit Jonny = new InfantryUnit("Jonny", 300);
@@ -77,7 +77,7 @@ class ArmyTest {
     @Test
     @DisplayName("Getting an Infantry unit")
     void getInfantryUnits() {
-        Army army = new Army("Baggo");
+        Army army = new Army("NTNU");
         InfantryUnit Peder = new InfantryUnit("Peder", 222);
         army.add(Peder);
         assertEquals(1,army.getInfantryUnits().size());
@@ -86,9 +86,9 @@ class ArmyTest {
     @Test
     @DisplayName("Checking that the Commander units are not added alongside the Cavalry units.")
     void getCavalryUnits() {
-        Army army = new Army("Gutta");
+        Army army = new Army("NTNU");
         CavalryUnit Nygz = new CavalryUnit("Nygz", 100);
-        CommanderUnit Ch = new CommanderUnit("Ch", 200);
+        CommanderUnit Ch = new CommanderUnit("Ch", 100);
         army.add(Nygz);
         army.add(Ch);
         assertEquals(1,army.getCavalryUnits().size());
