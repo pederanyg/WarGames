@@ -39,31 +39,22 @@ public class BattleController {
 
     @FXML
     private Label armyOneHealth;
-
     @FXML
     private Label armyTwoHealth;
-
     @FXML
     private Label armyOneName;
-
     @FXML
     private Label armyTwoName;
-
     @FXML
     private ProgressBar armyOneBar;
-
     @FXML
     private ProgressBar armyTwoBar;
-
     @FXML
     private Label showWinner;
-
     @FXML
     private Button welcomeScreen;
-
     @FXML
     private Button saveBattleWinner;
-
     @FXML
     private Button restartBattle;
 

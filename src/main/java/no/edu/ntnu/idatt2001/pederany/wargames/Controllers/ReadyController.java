@@ -28,6 +28,10 @@ public class ReadyController {
     private Parent root;
 
     @FXML
+    private Label armyOneName;
+    @FXML
+    private Label armyTwoName;
+    @FXML
     private Button battle;
     @FXML
     private Label armyOneCommander;
@@ -85,6 +89,7 @@ public class ReadyController {
      */
     public void setArmyOne(Army armyOne) {
         this.armyOne = armyOne;
+        armyOneName.setText(armyOne.getName());
         armyOneInfantry.setText(String.valueOf(armyOne.getInfantryUnits().size()));
         armyOneRanged.setText(String.valueOf(armyOne.getRangedUnits().size()));
         armyOneCavalry.setText(String.valueOf(armyOne.getCavalryUnits().size()));
@@ -97,6 +102,7 @@ public class ReadyController {
      */
     public void setArmyTwo(Army armyTwo) {
         this.armyTwo = armyTwo;
+        armyTwoName.setText(armyTwo.getName());
         armyTwoInfantry.setText(String.valueOf(armyTwo.getInfantryUnits().size()));
         armyTwoRanged.setText(String.valueOf(armyTwo.getRangedUnits().size()));
         armyTwoCavalry.setText(String.valueOf(armyTwo.getCavalryUnits().size()));

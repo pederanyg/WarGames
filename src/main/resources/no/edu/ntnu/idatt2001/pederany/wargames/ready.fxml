@@ -12,8 +12,8 @@
             <Image url="@Images/5.png" />
          </image>
       </ImageView>
-      <Label layoutX="224.0" layoutY="126.0" text="Army One" />
-      <Label layoutX="321.0" layoutY="126.0" text="Army Two" />
+      <Label fx:id="armyOneName" layoutX="222.0" layoutY="126.0" text="Army One" />
+      <Label fx:id="armyTwoName" layoutX="321.0" layoutY="126.0" text="Army Two" />
       <Label layoutX="128.0" layoutY="159.0" prefHeight="20.0" prefWidth="80.0" text="Infantry Units:" textAlignment="CENTER" />
       <Label layoutX="128.0" layoutY="187.0" prefHeight="25.0" prefWidth="80.0" text="Ranged Units:" textAlignment="CENTER" />
       <Label layoutX="131.0" layoutY="217.0" prefHeight="25.0" prefWidth="73.0" text="Cavalry Units:" textAlignment="CENTER" />
