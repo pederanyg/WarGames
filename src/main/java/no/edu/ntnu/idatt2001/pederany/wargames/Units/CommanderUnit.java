@@ -1,7 +1,5 @@
 package no.edu.ntnu.idatt2001.pederany.wargames.Units;
 
-import no.edu.ntnu.idatt2001.pederany.wargames.Units.CavalryUnit;
-
 public class CommanderUnit extends CavalryUnit {
 
     /**

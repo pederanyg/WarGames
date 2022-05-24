@@ -1,10 +1,13 @@
 package no.edu.ntnu.idatt2001.pederany.wargames.Battle;
 
-import no.edu.ntnu.idatt2001.pederany.wargames.Battle.Battle;
 import no.edu.ntnu.idatt2001.pederany.wargames.Units.CavalryUnit;
 import no.edu.ntnu.idatt2001.pederany.wargames.Units.CommanderUnit;
 import no.edu.ntnu.idatt2001.pederany.wargames.Units.InfantryUnit;
 import no.edu.ntnu.idatt2001.pederany.wargames.Units.RangedUnit;
+
+/**
+ * An old method for checking if the units, armies and battle runs properly. Not relevant to the GUI.
+ */
 
 public class Main {
 

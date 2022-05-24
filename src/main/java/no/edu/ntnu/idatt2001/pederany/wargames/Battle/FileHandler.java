@@ -7,7 +7,7 @@ import java.util.ArrayList;
 public class FileHandler {
 
     /**
-     * Presenting an army with its units as strings, with a new unit on each new line
+     * Presenting an army with units as strings (typen, name, health), with a new unit on each new line
      * @param army  the army as a list of strings
      * @return      the army with all the units it contains
      */
@@ -24,10 +24,10 @@ public class FileHandler {
     }
 
     /**
-     *
-     * @param stringToWrite
-     * @param filePath
-     * @throws IOException
+     * Writes the army to the armyWrite.csv file
+     * @param stringToWrite the army written out
+     * @param filePath the path to the file
+     * @throws IOException If path is not found, exception is thrown
      */
     public static void writeToCsv(String stringToWrite, String filePath) throws IOException {
         try (FileWriter file = new FileWriter(filePath);
@@ -50,10 +50,10 @@ public class FileHandler {
 
     /**
      *
-     * @param filePath
+     * @param filePath the path to the file
      * @return
-     * @throws FileNotFoundException
-     * @throws NumberFormatException
+     * @throws FileNotFoundException Throws exception if file is not found
+     * @throws NumberFormatException Throws exception if the format is off
      */
     public static Army readFromCsv(String filePath) throws FileNotFoundException, NumberFormatException{
         String line;
@@ -76,7 +76,7 @@ public class FileHandler {
     }
 
     /**
-     *
+     * Gets a unit of the correct type
      * @param unit
      * @return
      */
@@ -95,7 +95,7 @@ public class FileHandler {
     }
 
     /**
-     *
+     * Reads from list and creates correct unit
      * @param unitInfo
      * @return
      */

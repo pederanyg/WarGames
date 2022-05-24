@@ -82,11 +82,17 @@ public class ArmyOneController extends ArmyTwoController {
     @FXML
     private TextArea inputFile;
 
+    /**
+     * Initializes the window, but disables some functions until army is selected + toggle-groups for the radio buttons
+     */
     @FXML
     public void initialize() {
         ToggleGroup scratchOrFile = new ToggleGroup();
+        ToggleGroup commander = new ToggleGroup();
         armyFromFile.setToggleGroup(scratchOrFile);
         armyFromScratch.setToggleGroup(scratchOrFile);
+        commanderBaggo.setToggleGroup(commander);
+        commanderNygz.setToggleGroup(commander);
         armyFromFileSelected();
         proceed.setDisable(true);
         selectFile.setVisible(false);
@@ -94,7 +100,7 @@ public class ArmyOneController extends ArmyTwoController {
     }
 
     /**
-     * Makes everything related to "Create army from scratch" visible, also checks if the "Proceed" button should be disabled
+     * Everything related to "Create army from scratch" becomes visible. Checks if the "Confirm" button should be disabled also.
      */
     @FXML
     public void armyFromScratchSelected() {
@@ -124,7 +130,7 @@ public class ArmyOneController extends ArmyTwoController {
     }
 
     /**
-     * Makes everything related to "Create army from scratch" invisible, also checks if the "Proceed" button should be disabled
+     * Everything related to "Import army from file" visible. Checks if the "Confirm" button should be disabled also.
      */
     @FXML
     public void armyFromFileSelected() {
@@ -155,6 +161,10 @@ public class ArmyOneController extends ArmyTwoController {
         }
     }
 
+    /**
+     * Opens the records folder, where the previously saved armies are located
+     * @throws FileNotFoundException If the folder is not found
+     */
     @FXML
     private void selectFileClicked() throws FileNotFoundException {
         File recordsDirectory = new File(System.getProperty("user.home"), ".wargames/records");
@@ -178,8 +188,8 @@ public class ArmyOneController extends ArmyTwoController {
     }
 
     /**
-     * Checks which infantryUp-button was clicked, then updates the label containing the amount accordingly
-     * @param event Which button was clicked
+     * When Infantry Units are added, the label updates accordingly
+     * @param event Button clicked by user
      */
     @FXML
     public void infantryUpClicked(ActionEvent event) {
@@ -194,9 +204,9 @@ public class ArmyOneController extends ArmyTwoController {
     }
 
     /**
-     * Checks which infantryDown-button was clicked, then updates the label containing the amount accordingly.
-     * If the new amount is less than 0, the label and value is not updated
-     * @param event Which button was clicked
+     * When Infantry Units are removed, the label updates accordingly
+     * If the amount is 0, no change is made
+     * @param event Button clicked by user
      */
     @FXML
     public void infantryDownClicked(ActionEvent event) {
@@ -211,8 +221,8 @@ public class ArmyOneController extends ArmyTwoController {
     }
 
     /**
-     * Checks which rangedUp-button was clicked, then updates the label containing the amount accordingly
-     * @param event Which button was clicked
+     * When Ranged Units are added, the label updates accordingly
+     * @param event Button clicked by user
      */
     @FXML
     public void rangedUpClicked(ActionEvent event) {
@@ -227,9 +237,9 @@ public class ArmyOneController extends ArmyTwoController {
     }
 
     /**
-     * Checks which rangedDown-button was clicked, then updates the label containing the amount accordingly.
-     * If the new amount is less than 0, the label and value is not updated
-     * @param event Which button was clicked
+     * When Ranged Units are removed, the label updates accordingly
+     * If the amount is 0, no change is made
+     * @param event Button clicked by user
      */
     @FXML
     public void rangedDownClicked(ActionEvent event) {
@@ -244,8 +254,8 @@ public class ArmyOneController extends ArmyTwoController {
     }
 
     /**
-     * Checks which cavalryUp-button was clicked, then updates the label containing the amount accordingly
-     * @param event Which button was clicked
+     * When Cavalry Units are added, the label updates accordingly
+     * @param event Button clicked by user
      */
     @FXML
     public void cavalryUpClicked(ActionEvent event) {
@@ -260,9 +270,9 @@ public class ArmyOneController extends ArmyTwoController {
     }
 
     /**
-     * Checks which cavalryDown-button was clicked, then updates the label containing the amount accordingly.
-     * If the new amount is less than 0, the label and value is not updated
-     * @param event Which button was clicked
+     * When Cavalry Units are removed, the label updates accordingly
+     * If the amount is 0, no change is made
+     * @param event Button clicked by user
      */
     @FXML
     public void cavalryDownClicked(ActionEvent event) {
@@ -277,8 +287,8 @@ public class ArmyOneController extends ArmyTwoController {
     }
 
     /**
-     * Checks if the user currently has selected any units. If they have the "Proceed"-button will be enabled.
-     * If the user has not selected any units, the button will be disabled
+     * Checks if the user has selected any units. If so, the "Confirm"-button will be enabled
+     * If no units are selected, the button remains disabled
      */
     @FXML
     public void unitsSelected() {
@@ -291,15 +301,18 @@ public class ArmyOneController extends ArmyTwoController {
         }
     }
 
+    /**
+     * The user's army name
+     */
     @FXML
     public void enterName() {
         name = nameArea.getText();
     }
 
     /**
-     * Creates an army, and transfers it to ready.fxml scene
-     * @param event
-     * @throws IOException
+     * Creates army and transfers it to ready.fxml
+     * @param event Button clicked by user
+     * @throws IOException Exception is thrown if the path is not found
      */
     @FXML
     public void proceedClicked(ActionEvent event) throws IOException {

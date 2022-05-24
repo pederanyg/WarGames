@@ -53,7 +53,7 @@ public class ReadyController {
     private RadioButton plains;
 
     /**
-     * Makes toggle-groups for radio-buttons
+     * Toggle-groups for the terrain radio-buttons
      */
     @FXML
     public void initialize() {
@@ -64,6 +64,9 @@ public class ReadyController {
         battle.setDisable(true);
     }
 
+    /**
+     * Confirms the selected terrain
+     */
     @FXML
     public void terrainClicked() {
         battle.setDisable(false);
@@ -76,6 +79,10 @@ public class ReadyController {
         }
     }
 
+    /**
+     * Imports the number of units in armyOne from armyOne.fxml
+     * @param armyOne army one
+     */
     public void setArmyOne(Army armyOne) {
         this.armyOne = armyOne;
         armyOneInfantry.setText(String.valueOf(armyOne.getInfantryUnits().size()));
@@ -84,6 +91,10 @@ public class ReadyController {
         armyOneCommander.setText(String.valueOf(armyOne.getCommanderUnits().size()));
     }
 
+    /**
+     * Imports the number of units in armyTwo from armyTwo.fxml
+     * @param armyTwo army two
+     */
     public void setArmyTwo(Army armyTwo) {
         this.armyTwo = armyTwo;
         armyTwoInfantry.setText(String.valueOf(armyTwo.getInfantryUnits().size()));
@@ -92,8 +103,13 @@ public class ReadyController {
         armyTwoCommander.setText(String.valueOf(armyTwo.getCommanderUnits().size()));
     }
 
+    /**
+     * Changes to battle.fxml and runs the battle
+     * @param event Button clicked by user
+     * @throws IOException Exception is thrown if the path is not found
+     */
     @FXML
-    public void startBattleClicked(ActionEvent event) throws IOException, InterruptedException {
+    public void startBattleClicked(ActionEvent event) throws IOException {
 
         URL url = new File("src/main/resources/no/edu/ntnu/idatt2001/pederany/wargames/battle.fxml").toURI().toURL();
         FXMLLoader loader = new FXMLLoader(url);

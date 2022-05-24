@@ -65,10 +65,18 @@ public class Battle {
         }
     }
 
+    /**
+     * The combined health of the units in the army
+     * @return the army's health
+     */
     public ArrayList<Integer> getArmyOneHealthOverTime() {
         return armyOneHealthOverTime;
     }
 
+    /**
+     * The combined health of the units in the army
+     * @return the army's health
+     */
     public ArrayList<Integer> getArmyTwoHealthOverTime() {
         return armyTwoHealthOverTime;
     }

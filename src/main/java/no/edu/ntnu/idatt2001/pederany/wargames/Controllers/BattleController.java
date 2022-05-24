@@ -67,6 +67,9 @@ public class BattleController {
     @FXML
     private Button restartBattle;
 
+    /**
+     * Initializes the window, but disables controls until the battle is finished
+     */
     @FXML
     public void initialize() {
         showWinner.setVisible(false);
@@ -76,7 +79,7 @@ public class BattleController {
     }
 
     /**
-     * Takes in two armies and terrain from another scene
+     * Takes in the two armies and user-selected terrain
      * @param armyOne
      * @param armyTwo
      * @param terrain
@@ -90,7 +93,7 @@ public class BattleController {
     }
 
     /**
-     * Starts a new battle with two armies, and displays the battle and winner to the user
+     * Starts the battle between the armies. Displays the health of the armies in real time and announces winner after.
      */
     public void startBattle() {
         copyArmyOne = new Army(armyOne);
@@ -128,6 +131,11 @@ public class BattleController {
         new Thread(task).start();
     }
 
+    /**
+     * Changes to welcomeScreen.fxml. The user can then create an entirely new battle
+     * @param e Button clicked by user
+     * @throws IOException Exception is thrown if the path is not found
+     */
     @FXML
     public void goBackToWelcomeScreen(ActionEvent e) throws IOException {
         URL url = new File("src/main/resources/no/edu/ntnu/idatt2001/pederany/wargames/welcomeScreen.fxml").toURI().toURL();
@@ -140,6 +148,11 @@ public class BattleController {
         stage.show();
     }
 
+    /**
+     * Saves the winner as a .csv-file in the records folder. Can be used again in later battles.
+     * @param e Button clicked by user
+     * @throws IOException Exception is thrown if the path is not found
+     */
     @FXML
     public void moveToSaveBattleWinner(ActionEvent e) throws IOException {
         FileHandler.checkDirectory();
@@ -156,6 +169,11 @@ public class BattleController {
         saveBattleWinner.setDisable(true);
     }
 
+    /**
+     * Changes to ready.fxml and then allows the user to swap terrain
+     * @param e Button clicked by user
+     * @throws IOException Exception is thrown if the path is not found
+     */
     @FXML
     public void restartBattle(ActionEvent e) throws IOException {
         URL url = new File("src/main/resources/no/edu/ntnu/idatt2001/pederany/wargames/ready.fxml").toURI().toURL();

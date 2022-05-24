@@ -17,6 +17,11 @@ public class RulesController {
     private Stage stage;
     private Scene scene;
 
+    /**
+     * Changes from rules.fxml to welcomeScreen.fxml
+     * @param event Button clicked by user
+     * @throws IOException Exception is thrown if the path is not found
+     */
     @FXML
     public void backToWelcomeScreen(ActionEvent event) throws IOException {
         URL url = new File("src/main/resources/no/edu/ntnu/idatt2001/pederany/wargames/welcomeScreen.fxml").toURI().toURL();

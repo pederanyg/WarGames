@@ -17,15 +17,14 @@ public class WelcomeScreenController {
 
     private Stage stage;
     private Scene scene;
-    private Parent root; // (?)
 
     @FXML
     private Button exit;
 
     /**
-     *  Changes to armyOne.fxml
+     *  Changes from welcomeScreen.fxml to armyOne.fxml
      * @param event
-     * @throws IOException
+     * @throws IOException Exception is thrown if the path is not found
      */
     @FXML
     public void createBattleClicked(ActionEvent event) throws IOException {
@@ -38,9 +37,9 @@ public class WelcomeScreenController {
     }
 
     /**
-     *  Changes to rules.fxml
-     * @param event
-     * @throws IOException
+     *  Changes from welcomeScreen.fxml to rules.fxml
+     * @param event Button clicked by user
+     * @throws IOException Exception is thrown if the path is not found
      */
     @FXML
     public void gameplayRulesClicked(ActionEvent event) throws IOException {
@@ -52,6 +51,9 @@ public class WelcomeScreenController {
         stage.show();
     }
 
+    /**
+     * Exits the application
+     */
     @FXML
     private void exitWindow(){
         Stage stage = (Stage) exit.getScene().getWindow();

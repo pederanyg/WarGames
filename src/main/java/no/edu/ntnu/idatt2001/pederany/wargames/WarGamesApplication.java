@@ -6,6 +6,10 @@ import javafx.scene.Scene;
 import javafx.stage.Stage;
 import java.io.IOException;
 
+/**
+ * The main application that opens the first scene in the GUI
+ */
+
 public class WarGamesApplication extends Application {
     @Override
     public void start(Stage stage) throws IOException {
