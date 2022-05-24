@@ -1,39 +1,41 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import javafx.scene.control.*?>
+<?import javafx.scene.image.*?>
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.text.*?>
 
 <AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/11.0.2" xmlns:fx="http://javafx.com/fxml/1" fx:controller="no.edu.ntnu.idatt2001.pederany.wargames.Controllers.BattleController">
    <children>
-      <Label layoutX="188.0" layoutY="43.0" text="The battle is live!">
-         <font>
-            <Font name="System Bold" size="28.0" />
-         </font>
-      </Label>
-      <Label fx:id="armyOneName" layoutX="145.0" layoutY="106.0" text="Army One">
-         <font>
-            <Font size="18.0" />
-         </font>
-      </Label>
-      <Label fx:id="armyTwoName" layoutX="375.0" layoutY="106.0" text="Army Two">
+      <ImageView fitHeight="410.0" fitWidth="600.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@Images/6.png" />
+         </image>
+      </ImageView>
+      <Label fx:id="armyOneName" layoutX="144.0" layoutY="128.0" text="Army One">
          <font>
             <Font size="18.0" />
          </font>
       </Label>
-      <Label layoutX="293.0" layoutY="111.0" text="vs." />
-      <ProgressBar fx:id="armyOneBar" layoutX="85.0" layoutY="251.0" prefWidth="200.0" progress="0.0" />
-      <ProgressBar fx:id="armyTwoBar" layoutX="315.0" layoutY="251.0" prefWidth="200.0" progress="0.0" />
+      <Label fx:id="armyTwoName" layoutX="375.0" layoutY="128.0" text="Army Two">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </Label>
+      <Label layoutX="293.0" layoutY="133.0" text="vs." />
+      <ProgressBar fx:id="armyOneBar" layoutX="106.0" layoutY="251.0" prefHeight="18.0" prefWidth="157.0" progress="0.0" />
+      <ProgressBar fx:id="armyTwoBar" layoutX="336.0" layoutY="251.0" prefHeight="18.0" prefWidth="157.0" progress="0.0" />
       <Label layoutX="136.0" layoutY="198.0" text="Remaining Health:" />
       <Label layoutX="367.0" layoutY="198.0" text="Remaining health:" />
       <Label fx:id="armyOneHealth" layoutX="171.0" layoutY="224.0" text="Label" />
       <Label fx:id="armyTwoHealth" layoutX="401.0" layoutY="224.0" text="Label" />
-      <Label fx:id="showWinner" layoutX="227.0" layoutY="289.0" text="Army is victorious!">
+      <Label fx:id="showWinner" layoutX="227.0" layoutY="281.0" text="Army is victorious!">
          <font>
             <Font size="18.0" />
          </font>
       </Label>
-      <Button fx:id="saveBattleWinner" layoutX="125.0" layoutY="328.0" mnemonicParsing="false" onAction="#moveToSaveBattleWinner" text="Save Winning Army" />
-      <Button fx:id="welcomeScreen" layoutX="336.0" layoutY="328.0" mnemonicParsing="false" onAction="#goBackToWelcomeScreen" text="Return to Welcome Screen" />
+      <Button fx:id="saveBattleWinner" layoutX="86.0" layoutY="315.0" mnemonicParsing="false" onAction="#moveToSaveBattleWinner" prefHeight="25.0" prefWidth="157.0" text="Save Winning Army" />
+      <Button fx:id="welcomeScreen" layoutX="357.0" layoutY="315.0" mnemonicParsing="false" onAction="#goBackToWelcomeScreen" text="Return to Welcome Screen" />
+      <Button fx:id="restartBattle" layoutX="252.0" layoutY="315.0" mnemonicParsing="false" onAction="#restartBattle" prefHeight="25.0" prefWidth="95.0" text="Restart Battle" />
    </children>
 </AnchorPane>

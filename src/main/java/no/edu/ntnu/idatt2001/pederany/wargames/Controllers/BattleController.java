@@ -65,6 +65,9 @@ public class BattleController {
     private Button saveBattleWinner;
 
     @FXML
+    private Button restartBattle;
+
+    @FXML
     public void initialize() {
         showWinner.setVisible(false);
         welcomeScreen.setVisible(false);
@@ -149,5 +152,21 @@ public class BattleController {
         path.append(winner.getName()).append(".csv");
         FileHandler.writeToCsv(FileHandler.convertToString(winner), path.toString());
         saveBattleWinner.setDisable(true);
+    }
+
+    @FXML
+    public void restartBattle(ActionEvent e) throws IOException {
+        URL url = new File("src/main/resources/no/edu/ntnu/idatt2001/pederany/wargames/ready.fxml").toURI().toURL();
+        FXMLLoader loader = new FXMLLoader(url);
+        root = loader.load();
+
+        ReadyController readyController = loader.getController();
+        readyController.setArmyOne(this.copyArmyOne);
+        readyController.setArmyTwo(this.copyArmyTwo);
+
+        stage = (Stage) ((Node) e.getSource()).getScene().getWindow();
+        scene = new Scene(root);
+        stage.setScene(scene);
+        stage.show();
     }
 }
